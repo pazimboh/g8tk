@@ -94,4 +94,8 @@ contract MyToken is ERC20, Ownable {
     function setTokenPrice(uint256 newPrice) external onlyOwner {
         tokenPrice = newPrice;
     }
+     // Allows the owner to mint tokens to any address
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
 }
